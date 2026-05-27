@@ -147,6 +147,13 @@ To run Khronos on real data, use the `jackal_khronos.launch.yaml` file. To use p
 ros2 launch khronos_ros jackal_khronos.launch.yaml bag_path:=PATH_TO_BAG_DIR use_prerecorded_semantics:=true
 ```
 
+For me (Litecdows)
+```bash
+ros2 launch khronos_ros jackal_khronos.launch.yaml \
+  bag_path:=/data/datasets/khronos/mezzanine/khronos_mezzanine_long2_w_semantics \
+  use_prerecorded_semantics:=true
+```
+
 **Note:** The ROS2 version uses `ianvs` for bag playback. Kimera-VIO is not yet ported to ROS2, so odometry transforms are published from recorded odometry messages via the `odom_to_tf.py` node. 
 
 Your ouptut will look something like this:
