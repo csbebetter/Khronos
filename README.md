@@ -65,8 +65,8 @@ Khronos has been tested on Ubuntu 24.04 & ROS2 Jazzy. It **should** build on new
 Setup a ROS2 workspace:
 ```bash
 sudo apt install python3-vcstool python3-tk
-mkdir -p ~/ros2_ws/src
-cd ~/ros2_ws/src
+mkdir -p ~/ros2_khronos/src
+cd ~/ros2_khronos/src
 ```
 
 Install system dependencies:
@@ -76,7 +76,7 @@ sudo apt install ros-$ROS_DISTRO-gtsam libgoogle-glog-dev nlohmann-json3-dev
 
 Get Khronos and all source dependencies:
 ```bash
-cd ~/ros2_ws/src
+cd ~/ros2_khronos/src
 git clone git@github.com:MIT-SPARK/Khronos.git khronos
 # Use `https.rosinstall` if you do not have ssh key setup with github.com.
 vcs import . < khronos/install/ssh.rosinstall
@@ -84,7 +84,7 @@ vcs import . < khronos/install/ssh.rosinstall
 
 Build:
 ```bash
-cd ~/ros2_ws
+cd ~/ros2_khronos
 colcon build --symlink-install --cmake-args -DCMAKE_BUILD_TYPE=Release
 ```
 
@@ -112,7 +112,7 @@ Open [uhumans2_khronos.launch.yaml](khronos_ros/launch/uhumans2_khronos.launch.y
 Run the following in commandline:
 
 ```bash
-source ~/ros2_ws/install/setup.bash
+source ~/ros2_khronos/install/setup.bash
 ros2 launch khronos_ros uhumans2_khronos.launch.yaml
 ```
 
@@ -131,6 +131,11 @@ At the end of rosbag playback, Khronos will have a fully completed scene reconst
 After the rosbag has completed playback and the method is finished, call the following service to guarantee that output is saved before termination:
 ```bash
 ros2 service call /khronos_node/experiment/finish_mapping_and_save std_srvs/srv/Empty
+```
+
+```bash
+source ~/ros2_khronos/install/setup.bash
+ros2 service call /finish_mapping_and_save std_srvs/srv/Empty {}
 ```
 
 You can now terminate Khronos.
@@ -192,7 +197,7 @@ For more information on how to perform evaluation, see [this readme](khronos_eva
 # Contributing
 This is an open-source project and pull requests for features and fixes are very welcome! We follow the [Feature-Branch-Workflow](https://www.atlassian.com/git/tutorials/comparing-workflows/feature-branch-workflow) and the [google C++ style guide](https://google.github.io/styleguide/cppguide.html). To adhere to this, please setup the auto formatter and linter for khronos as follows:
 ```bash
-cd ~/ros2_ws/src/khronos
+cd ~/ros2_khronos/src/khronos
 pip install pre-commit
 pre-commit install
 ```
