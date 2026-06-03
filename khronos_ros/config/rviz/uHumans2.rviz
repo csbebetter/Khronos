@@ -59,11 +59,7 @@ Visualization Manager:
           Enabled: true
           Name: Scene Graph
           Namespaces:
-            layer_2_bounding_boxes: true
-            layer_2_nodes: true
-            layer_2_text: true
-            layer_2p97_edges: true
-            layer_2p97_nodes: true
+            {}
           Topic:
             Depth: 5
             Durability Policy: Volatile
@@ -74,7 +70,7 @@ Visualization Manager:
         - Class: kimera_pgmo_rviz/MeshDisplay
           Cull Backfaces: true
           Enable Lighting: false
-          Enabled: true
+          Enabled: false
           Name: Background Mesh
           Toggle Visibility All: true
           Topic:
@@ -84,26 +80,24 @@ Visualization Manager:
             History Policy: Keep Last
             Reliability Policy: Reliable
             Value: /hydra_visualizer/mesh
-          Value: true
+          Value: false
           Visible:
             Value: true
             robot0:
               Value: true
               dsg_mesh: true
         - Class: rviz_default_plugins/MarkerArray
-          Enabled: true
+          Enabled: false
           Name: Object Trajectories
           Namespaces:
-            end_bbox: true
-            start_bbox: true
-            trajectory: true
+            {}
           Topic:
             Depth: 5
             Durability Policy: Volatile
             History Policy: Keep Last
             Reliability Policy: Reliable
             Value: /hydra_visualizer/dynamic_objects
-          Value: true
+          Value: false
         - Class: kimera_pgmo_rviz/MeshDisplay
           Cull Backfaces: true
           Enable Lighting: false
@@ -121,23 +115,32 @@ Visualization Manager:
           Visible:
             5692549928996306947: true
             5692549928996306948: true
-            5692549928996306952: true
+            5692549928996306949: true
+            5692549928996306951: true
             5692549928996306953: true
             5692549928996306955: true
             5692549928996306956: true
             5692549928996306957: true
             5692549928996306958: true
             5692549928996306959: true
+            5692549928996306960: true
             5692549928996306962: true
-            5692549928996306963: true
-            5692549928996306964: true
-            5692549928996306965: true
+            5692549928996306968: true
+            5692549928996306969: true
+            5692549928996306970: true
+            5692549928996306971: true
+            5692549928996306972: true
             5692549928996306973: true
+            5692549928996306974: true
+            5692549928996306975: true
             5692549928996306976: true
             5692549928996306977: true
+            5692549928996306978: true
             5692549928996306979: true
+            5692549928996306980: true
             5692549928996306981: true
             5692549928996306982: true
+            5692549928996306983: true
             5692549928996306984: true
             5692549928996306985: true
             5692549928996306986: true
@@ -147,12 +150,12 @@ Visualization Manager:
             5692549928996306990: true
             5692549928996306991: true
             5692549928996306992: true
+            5692549928996306993: true
             5692549928996306994: true
             5692549928996306995: true
             5692549928996306996: true
             5692549928996306997: true
             5692549928996306998: true
-            5692549928996306999: true
             5692549928996307000: true
             5692549928996307001: true
             5692549928996307002: true
@@ -172,15 +175,14 @@ Visualization Manager:
             5692549928996307016: true
             5692549928996307017: true
             5692549928996307018: true
-            5692549928996307019: true
             5692549928996307020: true
             5692549928996307021: true
             5692549928996307022: true
-            5692549928996307023: true
             5692549928996307024: true
             5692549928996307025: true
             5692549928996307026: true
             5692549928996307027: true
+            5692549928996307028: true
             5692549928996307029: true
             5692549928996307030: true
             5692549928996307031: true
@@ -197,50 +199,24 @@ Visualization Manager:
             5692549928996307042: true
             5692549928996307043: true
             5692549928996307044: true
-            5692549928996307045: true
-            5692549928996307046: true
-            5692549928996307047: true
-            5692549928996307049: true
-            5692549928996307050: true
-            5692549928996307051: true
-            5692549928996307052: true
-            5692549928996307053: true
-            5692549928996307054: true
+            5692549928996307055: true
             5692549928996307056: true
             5692549928996307057: true
             5692549928996307058: true
             5692549928996307059: true
-            5692549928996307060: true
-            5692549928996307061: true
-            5692549928996307062: true
-            5692549928996307064: true
-            5692549928996307065: true
             5692549928996307066: true
             5692549928996307067: true
             5692549928996307068: true
             5692549928996307069: true
+            5692549928996307070: true
             5692549928996307071: true
-            5692549928996307072: true
             5692549928996307073: true
-            5692549928996307074: true
             5692549928996307075: true
             5692549928996307076: true
             5692549928996307077: true
             5692549928996307078: true
-            5692549928996307081: true
-            5692549928996307083: true
-            5692549928996307088: true
-            5692549928996307089: true
-            5692549928996307091: true
-            5692549928996307092: true
-            5692549928996307093: true
-            5692549928996307094: true
-            5692549928996307095: true
-            5692549928996307097: true
-            5692549928996307124: true
-            5692549928996307125: true
-            5692549928996307126: true
-            5692549928996307127: true
+            5692549928996307079: true
+            5692549928996307080: true
             Value: true
       Enabled: true
       Name: Scene Graph
@@ -612,25 +588,25 @@ Visualization Manager:
   Views:
     Current:
       Class: rviz_default_plugins/Orbit
-      Distance: 59.601104736328125
+      Distance: 49.8586311340332
       Enable Stereo Rendering:
         Stereo Eye Separation: 0.05999999865889549
         Stereo Focal Distance: 1
         Swap Stereo Eyes: false
         Value: false
       Focal Point:
-        X: -2.672412157058716
-        Y: 18.520326614379883
-        Z: 0.9637332558631897
+        X: -4.318284511566162
+        Y: 21.40868377685547
+        Z: 2.392712354660034
       Focal Shape Fixed Size: false
       Focal Shape Size: 0.05000000074505806
       Invert Z Axis: false
       Name: Current View
       Near Clip Distance: 0.009999999776482582
-      Pitch: 1.0847961902618408
+      Pitch: 0.9897961020469666
       Target Frame: <Fixed Frame>
       Value: Orbit (rviz_default_plugins)
-      Yaw: 3.500412702560425
+      Yaw: 2.245412588119507
     Saved: ~
 Window Geometry:
   Depth:
@@ -664,5 +640,5 @@ Window Geometry:
   Views:
     collapsed: true
   Width: 2548
-  X: 0
-  Y: 0
+  X: -32
+  Y: -32
