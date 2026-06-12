@@ -115,6 +115,15 @@ Run the following in commandline:
 source ~/ros2_khronos/install/setup.bash
 ros2 launch khronos_ros uhumans2_khronos.launch.yaml
 ```
+use openset semantics
+```bash
+source ~/venvs/semantic_inference/bin/activate
+source ~/ros2_khronos/install/setup.bash
+ros2 launch khronos_ros uhumans2_khronos.launch.yaml \
+  dataset:=tesse_cd_office \
+  use_gt_semantics:=false \
+  use_openset_semantics:=true
+```
 
 RVIZ will launch automatically for real-time visualization. You should see the method build an incremental background mesh, detect and segment static and dynamic objects, and generate object nodes. Output will look like this:
 

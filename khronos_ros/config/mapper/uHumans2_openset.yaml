@@ -33,6 +33,7 @@ verbosity: 3
 # =============================== Khronos Active Window ===============================
 # Active Window.
 active_window:
+  type: "ActiveWindow"
   verbosity: 2
   min_output_separation: 0.0 # s
 
@@ -153,6 +154,7 @@ frontend:
 
 # =============================== Backend ===============================
 backend:
+  type: "Backend"
   add_places_to_deformation_graph: false
   optimize_on_lc: true
   enable_node_merging: true # Propose node merges
